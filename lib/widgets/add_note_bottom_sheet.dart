@@ -1,10 +1,11 @@
 
 import 'package:flutter/material.dart';
+import 'package:notes_app/widgets/custom_text_field.dart';
 
-import '../constants/colors.dart';
+
 
 class AddNoteBottomSheet extends StatelessWidget {
-  const AddNoteBottomSheet({Key? key}) : super(key: key);
+   AddNoteBottomSheet();
 
   @override
   Widget build(BuildContext context) {
@@ -13,27 +14,15 @@ class AddNoteBottomSheet extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: 20,),
-          TextField(
-            cursorColor: kPrimaryColor,
-            decoration: InputDecoration(
-              hintText: 'Add note',
-              hintStyle: TextStyle(color: kPrimaryColor),
-              border: buildOutlineInputBorder(),
-              enabledBorder: buildOutlineInputBorder(),
-              focusedBorder: buildOutlineInputBorder(kPrimaryColor)
-            ),
-          ),
+          CustomTextField(hintText: 'Title' ),
+          SizedBox(height: 20,),
+          CustomTextField(hintText: 'Content' , maxLines: 5, ),
         ],
       ),
     );
   }
 
-  OutlineInputBorder buildOutlineInputBorder([color]) {
-    return OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16),
-              borderSide: BorderSide(
-                color: color ?? Colors.white
-              )
-            );
-  }
+
+
 }
+

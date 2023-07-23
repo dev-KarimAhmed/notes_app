@@ -1,11 +1,25 @@
 
+
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/widgets/custom_app_bar.dart';
 import 'package:notes_app/widgets/custom_text_field.dart';
 
-class EditNoteViewBody extends StatelessWidget {
+class EditNoteViewBody extends StatefulWidget {
   const EditNoteViewBody({Key? key}) : super(key: key);
 
+  @override
+  State<EditNoteViewBody> createState() => _EditNoteViewBodyState();
+}
+
+class _EditNoteViewBodyState extends State<EditNoteViewBody> {
+  @override
+  void initState(){
+    BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+   super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return SafeArea(

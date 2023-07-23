@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 
 import '../cubits/add_note_cubit/add_note_cubit.dart';
 import '../cubits/add_note_cubit/add_note_state.dart';
@@ -45,7 +46,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                   var note = NoteModel(
                       title: title! ,
                       subTitle: subTitle! ,
-                      date: DateTime.now().toString(),
+                      date: DateFormat.yMEd().add_jm().format(DateTime.now()),
                       color: Colors.blue.value
                   );
                   BlocProvider.of<AddNotesCubit>(context).addNote(note: note);

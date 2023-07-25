@@ -38,6 +38,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
           CustomTextField(hintText: 'Content' , maxLines: 5, onSaved: (value){
             subTitle = value;
           },),
+          SizedBox(height: 20,),
           ColorsListView(),
           SizedBox(height: 20,),
           BlocBuilder<AddNotesCubit , AddNotesState>(

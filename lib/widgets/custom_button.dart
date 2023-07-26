@@ -17,14 +17,14 @@ class CustomButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
         ),
         child: Center(
-          child: isLoading ? SizedBox(
+          child: isLoading ? const SizedBox(
             height: 24,
             width: 24,
             child: CircularProgressIndicator(
              color: Colors.black,
             ),
           )
-              : Text('Add' , style: TextStyle(color: Colors.black , fontSize: 18 , fontWeight: FontWeight.bold),),
+              : const Text('Add' , style: TextStyle(color: Colors.black , fontSize: 18 , fontWeight: FontWeight.bold),),
         ),
       ),
     );

@@ -19,7 +19,7 @@ class CustomNoteItem extends StatelessWidget {
         }));
       },
       child: Container(
-        padding: EdgeInsets.fromLTRB(16, 24, 0, 25),
+        padding: const EdgeInsets.fromLTRB(16, 24, 0, 25),
         decoration: BoxDecoration(
           color: Color(notes.color),
           borderRadius: BorderRadius.circular(16),
@@ -28,24 +28,24 @@ class CustomNoteItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ListTile(
-              title: Text(notes.title, style: TextStyle(color: Colors.black),),
+              title: Text(notes.title, style: const TextStyle(color: Colors.black),),
               subtitle: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 16),
-                child: Text(notes.subTitle , style: TextStyle(color: Colors.black45),),
+                child: Text(notes.subTitle , style: const TextStyle(color: Colors.black45),),
               ),
               trailing: IconButton(
                 onPressed: (){
                   notes.delete();
                   BlocProvider.of<NotesCubit>(context).fetchAllNotes();
                 },
-                icon: Icon(Icons.delete , size: 30,),
+                icon: const Icon(Icons.delete , size: 30,),
                 color: Colors.black,
               ),
               textColor: Colors.black,
             ),
             Padding(
               padding: const EdgeInsets.only(right: 16.0),
-              child: Text(notes.date , style: TextStyle(color: Colors.black45),),
+              child: Text(notes.date , style: const TextStyle(color: Colors.black45),),
             ),
           ],
         ),

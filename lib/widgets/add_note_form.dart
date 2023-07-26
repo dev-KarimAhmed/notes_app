@@ -30,17 +30,17 @@ class _AddNoteFormState extends State<AddNoteForm> {
       autovalidateMode: autoValidateMode,
       child: Column(
         children: [
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           CustomTextField(hintText: 'Title' , onSaved: (value){
             title = value;
           }),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           CustomTextField(hintText: 'Content' , maxLines: 5, onSaved: (value){
             subTitle = value;
           },),
-          SizedBox(height: 20,),
-          ColorsListView(),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
+          const ColorsListView(),
+          const SizedBox(height: 20,),
           BlocBuilder<AddNotesCubit , AddNotesState>(
             builder: (context,state) => CustomButton(
               isLoading: state is AddNotesLoading ? true : false,
@@ -62,7 +62,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
               },
             ),
           ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
         ],
       ),
     );

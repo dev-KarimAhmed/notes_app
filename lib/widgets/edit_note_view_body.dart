@@ -38,7 +38,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
                 Navigator.pop(context);
               },
           ),
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
           CustomTextField(
@@ -47,7 +47,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
             },
               hintText: 'Title'
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           CustomTextField(
@@ -57,7 +57,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
             hintText: 'Content',
             maxLines: 5,
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           EditViewNotes(note: widget.note),
